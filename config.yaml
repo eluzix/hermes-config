@@ -135,6 +135,8 @@ onboarding:
 telemetry:
   shared_metrics:
     enabled: false
+    send: false
+    offer_version: 2
 updates:
   pre_update_backup: false
   backup_keep: 5
