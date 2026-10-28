@@ -1,0 +1,53 @@
+# Defense in depth. The sync script is the real boundary; this catches a
+# hand copy of ~/.hermes into this repo.
+
+# Credentials
+.env
+.env.*
+!.env.example
+auth.json
+auth.json.*
+*.kdbx
+*.key
+creds.json
+vault/
+google_token.json
+google_client_secret.json
+google_oauth_pending.json
+.op.env
+npmrc
+honcho.json
+mem0.json
+mcp-tokens/
+
+# Runtime, sessions, caches — not settings
+__pycache__/
+*.py[cod]
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.lock
+logs/
+sessions/
+memories/
+platforms/
+browser-profile/
+browser_profiles/
+plugin-data/
+cache/
+backups/
+state-snapshots/
+checkpoints/
+sandboxes/
+image_cache/
+audio_cache/
+hermes-agent/
+tools/
+node/
+node_modules/
+state.db*
+gateway.pid
+gateway_state.json
+processes.json
+.hermes_history

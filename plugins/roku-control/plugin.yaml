@@ -1,0 +1,28 @@
+name: roku-control
+version: "1.0.0"
+description: Control one configured Roku TV over the local network using ECP.
+manifest_version: 2
+api_version: 1
+license: MIT
+tags: [roku, tv, local-network, remote-control]
+provides_tools:
+  - roku_status
+  - roku_list_apps
+  - roku_remote
+  - roku_launch_app
+  - roku_type_text
+  - roku_power_off
+config_schema:
+  host:
+    type: str
+    default: ""
+    description: Literal local IPv4 address of the Roku TV.
+    required: true
+  port:
+    type: int
+    default: 8060
+    description: Roku ECP HTTP port.
+  timeout:
+    type: float
+    default: 3.0
+    description: ECP connection and response timeout in seconds.

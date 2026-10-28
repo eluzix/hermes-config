@@ -1,0 +1,305 @@
+plugins:
+  enabled:
+    - family-tasks
+    - holographic
+    - homeassistant
+    - roku-control
+  disabled: []
+  entries:
+    family-tasks:
+      allow_tool_override: false
+      settings:
+        timezone: America/New_York
+        date_order: MDY
+    roku-control:
+      settings:
+        host: 192.168.31.34
+      allow_tool_override: false
+  hermes-memory-store:
+    db_path: ~/.hermes/profiles/shuki/memory_store.db
+    auto_extract: 'true'
+    default_trust: '0.5'
+    hrr_dim: '1024'
+model:
+  default: gpt-6.1-sol
+  provider: openai-api
+  base_url: https://api.openai.com/v1
+  aliases:
+    luna: openai-api/gpt-6-luna
+database:
+  journal_mode: wal
+runtime:
+  nofile_soft_limit: 4096
+agent:
+  max_turns: 500
+  verbose: false
+  reasoning_effort: medium
+  personalities: {}
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  home_mode: auto
+  container_cpu: 1
+  container_memory: 5120
+  container_disk: 51200
+  container_persistent: true
+  docker_mount_cwd_to_workspace: false
+  lifetime_seconds: 300
+browser:
+  inactivity_timeout: 120
+  cloud_provider: local
+  use_gateway: false
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: false
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+compression:
+  enabled: true
+  progress_notices: false
+  threshold: 0.5
+  target_ratio: 0.2
+  protect_last_n: 20
+  min_tail_user_messages: 1
+  max_attempts: 3
+  proactive_prune_tokens: 0
+  proactive_prune_min_result_chars: 8000
+  proactive_prune_min_reclaim_tokens: 4096
+  protect_first_n: 3
+  codex_gpt55_autoraise: true
+  codex_app_server_auto: native
+  codex_responses_native: false
+  codex_responses_compact_threshold: 200000
+  idle_compact_after_seconds: 0
+prompt_caching:
+  cache_ttl: 5m
+display:
+  compact: false
+  busy_input_mode: interrupt
+  bell_on_complete: false
+  show_reasoning: false
+  background_process_notifications: concise
+  streaming: true
+  skin: default
+  interim_assistant_messages: true
+  tool_progress: all
+  cleanup_progress: false
+  long_running_notifications: true
+  busy_ack_detail: true
+stt:
+  enabled: true
+  language: en
+  local:
+    model: base
+  openai:
+    model: whisper-1
+    language: ''
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200
+  user_char_limit: 1375
+  nudge_interval: 10
+  provider: holographic
+  flush_min_turns: 6
+delegation:
+  max_iterations: 250
+skills:
+  creation_nudge_interval: 15
+kanban:
+  review_dispatch: true
+code_execution:
+  timeout: 300
+  max_tool_calls: 50
+gateway:
+  platforms:
+    whatsapp:
+      extra:
+        bridge_port: 3010
+  standalone: false
+streaming:
+  enabled: false
+onboarding:
+  seen:
+    tool_progress_prompt: true
+telemetry:
+  shared_metrics:
+    enabled: false
+    send: false
+    offer_version: 2
+updates:
+  pre_update_backup: false
+  backup_keep: 5
+  non_interactive_local_changes: stash
+vault:
+  keepassxc:
+    database_path: /home/uzix/.hermes/eluzix.kdbx
+    key_file: /home/uzix/.hermes/eluzix.key
+    origin_overrides:
+      schoolbitez-eluzix: https://smithschool.schoolbitez.com/#/login
+_config_version: 52
+session_reset:
+  mode: none
+  idle_minutes: 1440
+  at_hour: 4
+group_sessions_per_user: true
+platform_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - connections
+    - cronjob
+    - delegation
+    - family_tasks
+    - file
+    - homeassistant
+    - image_gen
+    - kanban
+    - memory
+    - roku
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+  telegram:
+    - hermes-telegram
+  discord:
+    - hermes-discord
+  whatsapp:
+    - hermes-whatsapp
+  slack:
+    - hermes-slack
+  signal:
+    - hermes-signal
+  homeassistant:
+    - hermes-homeassistant
+  qqbot:
+    - hermes-qqbot
+  yuanbao:
+    - hermes-yuanbao
+  teams:
+    - hermes-teams
+  google_chat:
+    - hermes-google_chat
+known_plugin_toolsets:
+  cli:
+    - a2a
+    - family_tasks
+    - roku
+    - spotify
+  acp:
+    - homeassistant
+  webhook:
+    - homeassistant
+known_builtin_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - connections
+    - context_engine
+    - cronjob
+    - delegation
+    - discord
+    - discord_admin
+    - file
+    - homeassistant
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - spotify
+    - stt
+    - terminal
+    - todo
+    - tts
+    - video
+    - video_gen
+    - vision
+    - web
+    - x_search
+    - yuanbao
+platforms:
+  telegram:
+    enabled: false
+    home_channel:
+      platform: telegram
+      chat_id: '459957787'
+      name: Eluzix
+      user_id: '459957787'
+  whatsapp:
+    enabled: true
+    home_channel:
+      platform: whatsapp
+      chat_id: 111055053312194@lid
+      name: Shuki
+      user_id: 111055053312194@lid
+  webhook:
+    enabled: true
+
+# ── Security ──────────────────────────────────────────────────────────
+# Secret redaction is ON by default — strings that look like API keys,
+# tokens, and passwords are masked in tool output, logs, and chat
+# responses before the model or user ever sees them. Set redact_secrets
+# to false to disable (e.g. when developing the redactor itself).
+# tirith pre-exec scanning is enabled by default when the tirith binary
+# is available. Configure via security.tirith_* keys or env vars
+# (TIRITH_ENABLED, TIRITH_BIN, TIRITH_TIMEOUT, TIRITH_FAIL_OPEN).
+#
+# security:
+#   redact_secrets: true
+#   tirith_enabled: true
+#   tirith_path: "tirith"
+#   tirith_timeout: 5
+#   tirith_fail_open: true
+
+# ── Fallback Model ────────────────────────────────────────────────────
+# Automatic provider failover when primary is unavailable.
+# Uncomment and configure to enable. Triggers on rate limits (429),
+# overload (529), service errors (503), or connection failures.
+#
+# Supported providers:
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+#   nous         (OAuth — hermes auth) — Nous Portal
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+#
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4
+mcp_servers:
+  family_finance:
+    command: /home/uzix/.hermes/bin/family-finance-mcp
+    timeout: 120
+    connect_timeout: 90
+    supports_parallel_tool_calls: false
+    enabled: true
+    sampling:
+      enabled: false
+    tools:
+      resources: false
+      prompts: false
+_left_core_scoped:
+  - homeassistant
+_left_core_installed:
+  - homeassistant

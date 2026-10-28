@@ -1,0 +1,56 @@
+{
+  "jobs": [
+    {
+      "id": "74ed27269465",
+      "name": "Family tasks - daily",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "display": "0 7 * * *"
+      },
+      "schedule_display": "0 7 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 38
+      },
+      "deliver": "whatsapp",
+      "script": "family_tasks_daily.py",
+      "no_agent": true,
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "459957787",
+        "chat_name": "Eluzix",
+        "thread_id": null,
+        "user_id": "459957787",
+        "scope_id": null
+      }
+    },
+    {
+      "id": "0588eac9b293",
+      "name": "Family tasks - weekly",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * 0",
+        "display": "0 18 * * 0"
+      },
+      "schedule_display": "0 18 * * 0",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "deliver": "whatsapp",
+      "script": "family_tasks_weekly.py",
+      "no_agent": true,
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "459957787",
+        "chat_name": "Eluzix",
+        "thread_id": null,
+        "user_id": "459957787",
+        "scope_id": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Catalog plugins. Reinstall with `hermes plugins install`; do not vendor the trees.
+
+holographic:
+  source: https://github.com/itpartypattaya/hermes-plugin-holographic
+  revision: 7488ac32b78f983cff8484209686d59c9b330b76
+  pinned: true
+  catalog:
+    name: holographic
+    repo: https://github.com/itpartypattaya/hermes-plugin-holographic
+    sha: 7488ac32b78f983cff8484209686d59c9b330b76
+    pin: 7488ac32b78f983cff8484209686d59c9b330b76
+    tier: community
+
+homeassistant:
+  source: https://github.com/NousResearch/hermes-official-plugins#homeassistant
+  revision: 4d492b1dc5326af3e38bb2cf3e4b9ad6d65f0072
+  pinned: true
+  catalog:
+    name: homeassistant
+    repo: https://github.com/NousResearch/hermes-official-plugins
+    sha: 4d492b1dc5326af3e38bb2cf3e4b9ad6d65f0072
+    pin: 4d492b1dc5326af3e38bb2cf3e4b9ad6d65f0072
+    tier: official

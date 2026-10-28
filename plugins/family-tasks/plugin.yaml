@@ -1,0 +1,20 @@
+name: family-tasks
+version: 0.1.0
+manifest_version: 2
+api_version: 1
+description: "Track tasks, events, things to bring, and reminders for children."
+author: local
+license: MIT
+tags: [productivity, family, tasks]
+provides_tools:
+  - family_tasks_ingest
+  - family_tasks
+config_schema:
+  timezone:
+    type: str
+    default: America/New_York
+    description: IANA timezone used to interpret and display dates.
+  date_order:
+    type: str
+    default: MDY
+    description: Preferred order for ambiguous numeric dates.
